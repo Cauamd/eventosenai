@@ -1,0 +1,342 @@
+{
+  "info": {
+    "name": "EventoSENAI",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base",
+      "value": "http://localhost:3333"
+    }
+  ],
+  "item": [
+    {
+      "name": "Listar eventos",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/eventos",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "eventos"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Filtrar por categoria",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/eventos?categoria=1",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "eventos?categoria=1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Detalhar evento",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/eventos/1",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "eventos",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Criar evento",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/eventos",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "eventos"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"titulo\": \"Novo evento\", \"descricao\": \"Teste\", \"data_evento\": \"2026-12-01 10:00:00\", \"local\": \"Sala 1\", \"vagas\": 10, \"categoria_id\": 1}"
+        }
+      }
+    },
+    {
+      "name": "Atualizar evento",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/eventos/1",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "eventos",
+            "1"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"titulo\": \"Atualizado\", \"descricao\": \"Teste\", \"data_evento\": \"2026-12-01 10:00:00\", \"local\": \"Sala 1\", \"vagas\": 10, \"categoria_id\": 1}"
+        }
+      }
+    },
+    {
+      "name": "Remover evento",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/eventos/6",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "eventos",
+            "6"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Listar participantes",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/participantes",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "participantes"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Criar participante",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/participantes",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "participantes"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"nome\": \"Fulano\", \"email\": \"fulano@senai.com\", \"turma\": \"DS-2026\"}"
+        }
+      }
+    },
+    {
+      "name": "Participante e-mail repetido (409)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/participantes",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "participantes"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"nome\": \"Ana\", \"email\": \"ana@senai.com\", \"turma\": \"DS-2026\"}"
+        }
+      }
+    },
+    {
+      "name": "Listar inscritos do evento",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/eventos/1/inscritos",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "eventos",
+            "1",
+            "inscritos"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Inscrever",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/inscricoes",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "inscricoes"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"evento_id\": 3, \"participante_id\": 4}"
+        }
+      }
+    },
+    {
+      "name": "Inscrição duplicada (409)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/inscricoes",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "inscricoes"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"evento_id\": 1, \"participante_id\": 1}"
+        }
+      }
+    },
+    {
+      "name": "Evento lotado (409) - evento 3 tem 2 vagas",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/inscricoes",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "inscricoes"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"evento_id\": 3, \"participante_id\": 5}"
+        }
+      }
+    },
+    {
+      "name": "Cancelar inscrição",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/inscricoes/4",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "inscricoes",
+            "4"
+          ]
+        }
+      }
+    }
+  ]
+}

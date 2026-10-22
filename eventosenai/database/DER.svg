@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" font-family="monospace" font-size="13">
+<rect width="900" height="420" fill="#fff"/>
+<g stroke="#004a8f" fill="#eef4fb">
+<rect x="20" y="40" width="200" height="90"/><rect x="330" y="20" width="240" height="190"/>
+<rect x="680" y="40" width="200" height="130"/><rect x="330" y="270" width="240" height="120"/></g>
+<g fill="#004a8f" font-weight="bold">
+<text x="30" y="60">categorias</text><text x="340" y="40">eventos</text>
+<text x="690" y="60">participantes</text><text x="340" y="290">inscricoes</text></g>
+<g fill="#222">
+<text x="30" y="85">PK id INT</text><text x="30" y="105">nome VARCHAR(60) UQ</text>
+<text x="340" y="65">PK id INT</text><text x="340" y="85">titulo VARCHAR(120)</text><text x="340" y="105">descricao TEXT</text>
+<text x="340" y="125">data_evento DATETIME</text><text x="340" y="145">local VARCHAR(100)</text>
+<text x="340" y="165">vagas INT CHECK(&gt;0)</text><text x="340" y="185">FK categoria_id INT</text>
+<text x="690" y="85">PK id INT</text><text x="690" y="105">nome VARCHAR(100)</text>
+<text x="690" y="125">email VARCHAR(120) UQ</text><text x="690" y="145">turma VARCHAR(40)</text>
+<text x="340" y="315">PK id INT</text><text x="340" y="335">FK evento_id INT</text>
+<text x="340" y="355">FK participante_id INT</text><text x="340" y="375">data_inscricao DATETIME</text></g>
+<g stroke="#222" fill="none">
+<line x1="220" y1="85" x2="330" y2="85"/><line x1="450" y1="210" x2="450" y2="270"/>
+<polyline points="680,105 620,105 620,330 570,330"/></g>
+<g fill="#222"><text x="225" y="78">1</text><text x="310" y="78">N</text>
+<text x="455" y="240">1</text><text x="455" y="264">N</text>
+<text x="660" y="98">1</text><text x="578" y="324">N</text>
+<text x="590" y="250">UNIQUE(evento_id, participante_id)</text></g>
+</svg>
